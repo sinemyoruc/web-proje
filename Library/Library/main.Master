@@ -1,0 +1,158 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="main.master.cs" Inherits="Library.main" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+
+<title>Library</title>
+
+    <link href="/style.css" rel="stylesheet" />
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+
+
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        
+         <div id="wrapper">
+
+            <header>
+                <div class ="logo">
+                    LOGO
+                </div>
+                
+                <nav>
+                    <ul>
+                        <li>
+                            <a href="Anasayfa.aspx">Anasayfa</a>
+                            
+                        </li>
+                        <li>
+                            <a href="Hakkimizda.aspx">    Hakkımızda  </a>
+                        </li>
+
+
+                        <li class="kitaplar-wrap">
+                            <a href="Kitaplar.aspx">    Kitaplar  </a>
+                            <div class="kitaplar"> 
+                                <ul>
+                                    <li> Programlama </li>
+                                    <li> Web Tasarım </li>
+                                </ul>
+                            </div>
+                        </li>
+
+                        <li>
+                          <a href="AdminSayfası.aspx">   Kitap Ekle  </a>
+                        </li>
+                        <li>
+                            <a href="Iletisim.aspx">   İletişim  </a>
+                            
+                        </li>
+                        <li>
+                            <a href="GirisYap.aspx">    Giriş Yap   </a>
+                        </li>
+                        <li>
+                            <asp:Button ID="Button2" Text="Çıkış" runat="server" OnClick="Button2_Click"/>
+                        </li>
+                        <li>
+                            Hoşgeldin
+                            <asp:Label ID="Label1" CssClass="txtArama" runat="server" />
+                         </li>
+                    </ul>
+                </nav>
+
+                <div class="arama-wrap">
+
+                    <asp:TextBox ID="txtArama" CssClass="txtArama" runat= "server" placeholder="arama" />
+
+                    <asp:Button ID="btnArama" CssClass="btnArama" Text="Ara" runat="server" />
+
+                </div>
+
+
+            </header>
+
+            <div class="banner">
+                Bilgi paylaştıkça çoğalır..
+            </div>
+
+            <div class="sol-taraf">
+                
+                <div class="kategoriler"> 
+                    <div class="ust">
+                        Kategoriler
+                      <br />
+                    </div>
+                    <div class="alt">
+                        <div class="duyuru-wrap" style="width: auto">
+                            <asp:Label Text="" runat="server" />
+                           
+                           
+                            <asp:DataList ID="DataList1" runat="server" Width="107px">
+                                <ItemTemplate>
+                                    <a href="Kitaplar.aspx">
+                                    <asp:Label ID="KategoriAdiLabel" runat="server" Text='<%# Eval("KategoriAdi") %>' /></a>
+                                    <br />
+<br />
+                                </ItemTemplate>
+                            </asp:DataList>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <asp:AdRotator ID="AdRotator1" runat="server" AdvertisementFile="~/AdRotator.xml" Height="150px" Width="150px" />
+                </div>
+
+            </div>
+
+            <div class="icerik">
+
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+
+            </asp:ContentPlaceHolder>
+            </div>
+
+             <div>
+               
+                <table width="150px">
+                     <tr>
+                         <td width="150px">Toplam Ziyaretci :</td>
+                         <td>
+                             <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
+                         </td>
+                     </tr>
+                     <tr>
+                         <td width="150px">Online Ziyaretci :</td>
+                         <td>
+                             <asp:Label ID="Label3" runat="server" Text="Label"></asp:Label>
+                         </td>
+                     </tr>
+                 </table>
+
+                <!-- Kaç kere tıklandı  PageViews -->
+                <a target = "_blank">
+                     <img src="https://www.webfreecounter.com/hit.php?id=grunanqp&nd=6&style=56" border="0" alt="web counter">
+                 </a>
+
+                 <!-- UniqueVisitors -->
+                 <a target = "_blank">
+                     <img src="https://www.webfreecounter.com/hit.php?id=gunanqq&nd=6&style=56" border="0" alt="web counter">
+                 </a>
+                
+             </div>
+
+            <footer>
+                Günseli Çolak, Hatice Tataroğlu ve Sinem Yoruç Ödevi @ 2020 
+            </footer>
+
+        </div>
+    </form>
+</body>
+</html>
